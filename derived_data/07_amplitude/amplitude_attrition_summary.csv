@@ -1,0 +1,6 @@
+stage,n,notes
+pre_existing_event_control_pairs,742,Starting amplitude matched-pair dataset.
+movement_matched_pairs,542,Distinct from the 542 Run1 traversal firing candidates.
+qc_passing_pairs,536,After further control-quality checks.
+principal_tier_ac_sustained_immobility_pairs,257,Both event and matched control met sustained-immobility criteria.
+distinct_controls_in_principal_subset,247,Control reuse handled by inverse-reuse weighting.

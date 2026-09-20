@@ -1,0 +1,5 @@
+classification,n_candidates,expected_from_frozen_manuscript,match
+Likely physiological ripple,24,24,yes
+Ambiguous,161,161,yes
+Broadband artefact,19,19,yes
+Multiple merged events,21,21,yes

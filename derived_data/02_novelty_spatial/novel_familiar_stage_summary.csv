@@ -1,0 +1,4 @@
+traversal_interval,n_animals,mean_familiar_rate_events_per_min,mean_novel_rate_events_per_min,mean_novel_minus_familiar_events_per_min,n_novel_higher,n_familiar_higher,provenance_note
+2,5,14.4347769754242,19.0928067171224,4.6580297416982,4,1,Rate summaries from retained Batch 1 output. Final manuscript inference is reported separately in novelty_inference_summary.csv.
+3,5,16.7204392419152,20.5021514510874,3.78171220917217,4,1,Rate summaries from retained Batch 1 output. Final manuscript inference is reported separately in novelty_inference_summary.csv.
+4,5,20.8862329918763,22.8569526111375,1.97071961926119,3,2,Rate summaries from retained Batch 1 output. Final manuscript inference is reported separately in novelty_inference_summary.csv.

@@ -1,0 +1,5 @@
+testName,metric,band,subgroup,comparison,nPaired,nNonZeroDifferences,meanA,meanB,meanDifference,medianDifference,nPositive,nNegative,exactSignFlipP
+second_half_vs_first_half,burst_rate_per_min,beta_13_30Hz,Run1_halves,second half minus first half,5,5,2.3950880712371,4.45940341877771,2.0643153475406,0.860407042633253,4,1,0.125
+second_half_vs_first_half,burst_rate_per_min,beta2_23_30Hz,Run1_halves,second half minus first half,5,5,17.3204720989682,22.0994430989321,4.77897099996383,3.54178502094305,5,0,0.0625
+slope_vs_zero,burst_rate_slope,beta_13_30Hz,Run1_time,slope minus zero,5,5,0,0.053110058835329,0.053110058835329,0.0182696768700906,4,1,0.3125
+slope_vs_zero,burst_rate_slope,beta2_23_30Hz,Run1_time,slope minus zero,5,5,0,0.131169155195274,0.131169155195274,0.0867324770127146,5,0,0.0625

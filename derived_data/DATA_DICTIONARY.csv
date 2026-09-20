@@ -1,0 +1,26 @@
+file,manuscript_role,provenance_class,source,description
+01_temporal_beta/run1_timecourse_60s.csv,Figure 7 and upstream temporal analyses,retained_output,B3 beta_burst_over_time_outputs_BETA13_30_FUNC,60 s Run1 bin-level broad-beta and beta2 rates.
+01_temporal_beta/temporal_animal_summary.csv,Figures 4-5,retained_output,B3 hc31_batch4_UPDATED_STATS,Animal-level first/second-half rates and temporal slopes.
+01_temporal_beta/temporal_group_summary.csv,Figures 4-5,retained_output_derived,B3 hc31_batch4_UPDATED_STATS,Selected temporal sign-flip summary rows.
+02_novelty_spatial/novel_familiar_animal_rates.csv,Figure 8A,retained_output,B3 hc31_batch1_pooled_novel_familiar_by_subepoch,Animal-level pooled traversal intervals 2-4 rates.
+02_novelty_spatial/novel_familiar_stage_summary.csv,Figure 8C,retained_output_derived,B3 hc31_batch1_pooled_novel_familiar_by_subepoch,Stage means and direction counts. Final manuscript inference stored separately.
+02_novelty_spatial/novelty_inference_summary.csv,Novelty sensitivity results,frozen_manuscript_summary,HC31 v10.3.24,Final audited novelty inference values.
+02_novelty_spatial/spatial_generalisation_summary.csv,Held-out location analysis,frozen_manuscript_summary,HC31 v10.3.24,Final held-out tenth/quarter overlap results.
+02_novelty_spatial/movement_summary.csv,Figures 6 and 9A,frozen_manuscript_summary,HC31 v10.3.24,Final movement summary values.
+03_spectral/spectral_peak_frequency_summary.csv,Figures 10-11,retained_output_derived,B1 power_spectra_spectrogram_outputs,All-moving per-animal theta/beta/beta2 peak frequencies.
+03_spectral/line_noise_qc_summary.csv,Spectral QC,retained_output_derived,B3 hc31_batch5_noisy_power_spectrum_qc,All-moving line-noise excess summaries.
+04_neuronal_beta/figure13_statistics.csv,Figure 13,frozen_manuscript_summary,HC31 v10.3.24,"Final audited firing, participation, peri-event and field-linked statistics."
+04_neuronal_beta/phase_significant_units.csv,Figure 14 and phase results,frozen_manuscript_summary,HC31 v10.3.24,Two units surviving BH correction.
+04_neuronal_beta/phase_locking_summary.csv,Phase results,frozen_manuscript_summary,HC31 v10.3.24,Eligible counts and recording-level phase summary.
+04_neuronal_beta/field_annotation_summary.csv,Field-linked firing section,frozen_manuscript_summary,HC31 v10.3.24,"Counts of novel-only, familiar-only, both and no accepted field."
+05_candidate_screening/manual_review_label_counts.csv,Screening evaluation,retained_output_derived,B2 corrected N+ master event table,Final manual label counts after override correction.
+05_candidate_screening/screening_evaluation_summary.csv,Screening evaluation,frozen_manuscript_summary,HC31 v10.3.24,Final 64-clear-label balanced accuracy and ROC area.
+05_candidate_screening/tier_population_summary.csv,High-frequency candidate Methods/Results,frozen_manuscript_summary,HC31 v10.3.24,Manuscript Tier A+C population and context breakdown.
+06_candidate_firing/figure16_animal_table.csv,Figure 16,frozen_manuscript_summary,HC31 v10.3.24,Final per-animal candidate/control firing table.
+06_candidate_firing/candidate_firing_context_summary.csv,High-frequency candidate firing results,frozen_manuscript_summary,HC31 v10.3.24,"Run1, PRE, gap and traversal-plus-gap effects."
+07_amplitude/figure17_peth.csv,Figure 17,retained_output_derived,B2 corrected Stage B QC,Tier A+C sustained-immobility corrected PETH rows.
+07_amplitude/figure18_animal_effects.csv,Figure 18,retained_output_derived,B2 corrected Stage B QC,Animal-level principal amplitude effects.
+07_amplitude/figure18_statistics.csv,Figure 18,retained_output_derived,B2 corrected Stage B QC,Inverse-control-reuse weighted principal statistics.
+07_amplitude/amplitude_attrition_summary.csv,Amplitude Methods/Results,frozen_manuscript_summary,HC31 v10.3.24,742 to 542 to 536 to 257 pairs and 247 controls.
+08_spike_order/figure19_example.csv,Figure 19,retained_output_derived,B3 hc31_batch11I_shuffle_controlled_replay_sequences,Exact archived example event row.
+08_spike_order/figure20_summary.csv,Figure 20,frozen_manuscript_summary,HC31 v10.3.24,Final four-ordering summary table.

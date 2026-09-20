@@ -1,0 +1,8 @@
+metric,value,notes
+retained_units,253,Source-defined inclusion rule.
+phase_eligible_units,156,At least 10 phase spikes.
+uncorrected_rayleigh_p_lt_0.05_units,8,
+bh_significant_units,2,
+recordings_with_nonuniform_pooled_phase,4/5,Recording-level pooled summaries.
+across_recording_mean_resultant_length,0.499,Five recording preferred phases equally weighted.
+across_recording_approximate_p,0.302,Approximate Rayleigh test.

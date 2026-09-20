@@ -1,0 +1,7 @@
+category,n_candidates,notes
+Tier A,20,Reviewed likely candidates passing archived Balanced L2.
+Tier C,1295,Unreviewed passes in manuscript primary PRE/Run1 contexts.
+Tier A+C,1315,Primary screened downstream pool reported in frozen manuscript.
+PRE within Tier A+C,572,Includes 568 slow-wave-compatible PRE candidates plus four intermediate-state PRE Tier A candidates.
+Run1 within Tier A+C,740,Run1 candidate context.
+Run2 Tier A examples,3,Three reviewed Run2 examples reported in frozen manuscript.

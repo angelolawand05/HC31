@@ -1,0 +1,7 @@
+animal,events,valid_units,event_hz_per_unit,control_hz_per_unit,difference_hz_per_unit
+ANM00190422,45,63,1.1675,0.2090,+0.9586
+ANM204878,79,58,0.6547,0.1034,+0.5514
+ANM212379,181,24,0.3729,0.1747,+0.1982
+ANM228899,178,57,0.5125,0.1269,+0.3857
+ANM228900,59,51,0.7079,0.1413,+0.5665
+Equal-animal mean / total,542,253,0.6831,0.1511,+0.5321

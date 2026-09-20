@@ -1,0 +1,3 @@
+selection_definition,recovered_fraction,chance_fraction,p_value,median_jaccard_overlap,notes
+highest_tenth,0.146,0.136,0.491,0,Frozen manuscript held-out-animal exact overlap result.
+highest_quarter,0.262,0.260,0.529,,Frozen manuscript held-out-animal exact overlap result.

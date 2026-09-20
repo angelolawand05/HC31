@@ -1,0 +1,5 @@
+metric,mean_effect,positive_animals,exact_p,bh_q,control_reuse_weighting
+eventMinusControlCentralMinusPreZ,0.795635442884831,5/5,0.0625,0.625,Inverse reuse weighted
+eventMinusControlPostMinusPreZ,-0.08679044252429,2/5,0.4375,1,Inverse reuse weighted
+eventMinusControlPostBurstCountChange,-0.0249564270152506,2/5,0.625,1,Inverse reuse weighted
+eventMinusControlPostBurstFractionChange,-0.00406857144921724,2/5,0.8125,1,Inverse reuse weighted

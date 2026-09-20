@@ -1,0 +1,7 @@
+analysis,population,mean_novel_rate_events_per_min,mean_familiar_rate_events_per_min,mean_difference_events_per_min,bootstrap_95_low,bootstrap_95_high,p_value,notes
+pooled_novel_vs_familiar_beta2,"Run1 traversal intervals 2-4, five animals",21.63,18.95,2.68,-0.76,6.67,0.3125,Frozen manuscript value. Four of five animal differences were positive.
+first_30s_entry,first 30 s after behavioural entry to newly opened space,,,7.79,,,0.0625,Frozen manuscript value. Five of five animal differences were positive.
+first_60s_entry,first 60 s after behavioural entry to newly opened space,,,5.42,,,0.3750,Frozen manuscript value. Three of five animal differences were positive.
+circular_shift_sensitivity,cluster-preserving animal-by-interval moving-exposure shifts,,,,,,0.0571,"Frozen manuscript value from final 2,000,000-draw Monte Carlo sensitivity."
+speed_adjusted_difference,exploratory speed-adjusted novelty model,,,2.40,-0.34,5.72,,Frozen manuscript value.
+speed_adjusted_rate_ratio,exploratory count model,,,,,,0.234,Novel/familiar rate ratio = 1.133; Wald p with animal-clustered robust standard errors.

@@ -1,0 +1,5 @@
+ordering,windows_scored,starting_windows,pre,run1,run2,uncorrected_p_lt_0.05,q_lt_0.05,lowest_q,ordering_units
+Original spike-position order,931,931,347,349,235,20,0,0.810604,243
+Quality-filtered spike order,397,931,176,177,44,12,0,0.530470,236
+Median accepted-field position,355,931,139,173,43,11,0,0.518482,172
+Dominant repeat-cluster centre,355,931,139,173,43,9,0,0.945324,172

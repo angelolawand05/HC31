@@ -1,0 +1,5 @@
+metric,value,notes
+evaluation_set_size,225,Fixed candidate evaluation set.
+clear_label_count,64,24 likely + 19 broadband artefact + 21 multiple merged; ambiguous labels excluded.
+balanced_accuracy,0.696,Frozen manuscript held-out evaluation.
+roc_area,0.730,Frozen manuscript held-out evaluation.

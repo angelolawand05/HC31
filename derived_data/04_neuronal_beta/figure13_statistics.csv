@@ -1,0 +1,8 @@
+endpoint,effect_or_result,bootstrap_95_low,bootstrap_95_high,p_value,animal_direction,test
+Broad-beta firing,+0.00171 Hz/unit,-0.05319,+0.05647,0.8750,3/5 positive,exact two-sided sign-flip
+Beta2 firing,-0.00122 Hz/unit,-0.03437,+0.02517,0.9375,3/5 positive,exact two-sided sign-flip
+Broad-beta participation,+0.24935 pp,+0.00499,+0.44569,0.1875,4/5 positive,exact two-sided sign-flip
+Beta2 participation,+0.06331 pp,-0.13616,+0.20746,0.5625,4/5 positive,exact two-sided sign-flip
+Broad-beta peri-event firing,0/40 bins significant,,,0.8750,,max-T overall test
+Beta2 peri-event firing,0/40 bins significant,,,0.8750,,max-T overall test
+Beta2 field-linked firing,-0.06577 Hz,-0.11536,+0.00043,0.1875,4/5 negative,exact two-sided sign-flip

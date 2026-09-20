@@ -1,0 +1,5 @@
+analysis,n_candidates,mean_effect_hz_per_unit,n_positive_animals,exact_p,bh_q,notes
+Run1 traversal matched-control,542,+0.5321,5/5,0.0625,0.0625,Figure 16.
+PRE matched-control,568,+0.265,5/5,0.0625,0.0625,Signal-based PRE state definition.
+confinement-gap matched-control,198,+0.711,5/5,0.0625,,Outside the three-test BH family.
+traversal-plus-gap central_vs_surrounding,740,+0.521,5/5,0.0625,0.0625,Central firing compared with surrounding windows.

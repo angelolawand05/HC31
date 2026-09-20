@@ -1,0 +1,6 @@
+comparison,mean_a_cm_s,mean_b_cm_s,difference_cm_s,p_value,notes
+Run1_second_half_minus_first_half,37.36,45.41,8.05,,"A = first half, B = second half. Descriptive only in manuscript."
+novel_minus_familiar_overall,47.12,45.78,-1.35,0.1250,"A = familiar, B = novel."
+novel_minus_familiar_interval_2,,,5.1001,0.1250,
+novel_minus_familiar_interval_3,,,-1.4827,0.1250,
+novel_minus_familiar_interval_4,,,-2.6795,0.0625,
