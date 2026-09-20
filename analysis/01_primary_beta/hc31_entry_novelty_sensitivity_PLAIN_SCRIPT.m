@@ -6,16 +6,16 @@
 %
 % How to run:
 %
-%   cd('C:\Users\angel\Documents\MATLAB\CRCN')
+%   cd('<HC31_DATA_ROOT>')
 %   clear functions
 %   rehash
-%   scriptPath = 'C:\Users\angel\Documents\MATLAB\CRCN\hc31_entry_novelty_sensitivity_PLAIN_SCRIPT.m';
+%   scriptPath = '<HC31_DATA_ROOT>/hc31_entry_novelty_sensitivity_PLAIN_SCRIPT.m';
 %   eval(['run(''', scriptPath, ''')'])
 %
 % Expected input files:
 %
-%   C:\Users\angel\Documents\MATLAB\CRCN\resSave.mat
-%   C:\Users\angel\Documents\MATLAB\CRCN\beta_burst_over_time_outputs_FUNC\hc31_detected_beta_bursts.csv
+%   <HC31_DATA_ROOT>/resSave.mat
+%   <HC31_DATA_ROOT>/beta_burst_over_time_outputs_FUNC\hc31_detected_beta_bursts.csv
 %
 % Output folder:
 %

@@ -40,9 +40,12 @@ runnerDir = fileparts(mfilename('fullpath'));
 if ~isempty(runnerDir); addpath(runnerDir, '-begin'); end
 %% ---------------- User settings ----------------
 P = struct();
-projectRoot = 'C:\Users\angel\Documents\MATLAB\CRCN';
-if exist(projectRoot, 'dir') ~= 7
-    error('Forced Batch 8 could not find project root: %s', projectRoot);
+projectRoot = getenv('HC31_DATA_ROOT');
+if isempty(projectRoot) || exist(projectRoot, 'dir') ~= 7
+    projectRoot = uigetdir(pwd, 'Select the HC-31 project/data root folder');
+    if isequal(projectRoot, 0)
+        error('HC31:NoDataRoot', 'No HC-31 project/data root selected.');
+    end
 end
 cd(projectRoot);
 P.outDir = fullfile(projectRoot, 'hc31_batch8_spikes_placefield_linkage_FORCE');

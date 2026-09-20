@@ -9,11 +9,11 @@
 %   track sections during Run1.
 %
 % Inputs:
-%   C:\Users\angel\Documents\MATLAB\CRCN\resSave.mat
-%   C:\Users\angel\Documents\MATLAB\CRCN\beta_burst_over_time_outputs_BETA13_30_FUNC\hc31_detected_beta_bursts.csv
+%   <HC31_DATA_ROOT>/resSave.mat
+%   <HC31_DATA_ROOT>/beta_burst_over_time_outputs_BETA13_30_FUNC\hc31_detected_beta_bursts.csv
 %
 % Outputs:
-%   C:\Users\angel\Documents\MATLAB\CRCN\beta_burst_novel_familiar_outputs_BETA13_30\
+%   <HC31_DATA_ROOT>/beta_burst_novel_familiar_outputs_BETA13_30\
 %       hc31_novel_familiar_burst_table.csv
 %       hc31_novel_familiar_subepoch_summary.csv
 %       hc31_novel_familiar_animal_summary.csv
@@ -33,10 +33,10 @@
 %
 % How to run:
 %   Put this file in:
-%       C:\Users\angel\Documents\MATLAB\CRCN\
+%       <HC31_DATA_ROOT>/
 %
 %   Then try:
-%       cd('C:\Users\angel\Documents\MATLAB\CRCN')
+%       cd('<HC31_DATA_ROOT>')
 %       nfbeta
 %
 %   If MATLAB gives the same script/function recognition problem as before:
@@ -52,7 +52,13 @@ clear; clc; close all;
 % 1. Settings
 % -------------------------------------------------------------------------
 
-direc = 'C:\Users\angel\Documents\MATLAB\CRCN\';
+direc = getenv('HC31_DATA_ROOT');
+if isempty(direc) || exist(direc, 'dir') ~= 7
+    direc = uigetdir(pwd, 'Select the HC-31 root folder containing resSave.mat');
+    if isequal(direc, 0)
+        error('HC31:NoDataRoot', 'No HC-31 data root selected.');
+    end
+end
 
 animalIndices = 5:9;
 speedThresholdCmS = 5;

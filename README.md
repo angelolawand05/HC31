@@ -1,6 +1,6 @@
 # HC31
 
-MATLAB analysis code and supporting provenance documentation for a secondary analysis of the CRCNS hc-31 dataset examining hippocampal beta2 events during exploration of an expanding environment.
+MATLAB analysis code, compact derived data, and provenance documentation for a secondary analysis of the CRCNS hc-31 dataset examining hippocampal beta2 events during exploration of an expanding environment.
 
 ## Manuscript
 
@@ -14,7 +14,7 @@ The central analyses examine:
 - broad-beta (13-30 Hz) and beta2 event populations;
 - novel-versus-familiar spatial comparisons;
 - spectral structure and the relationship of beta2-band activity to theta harmonics;
-- neuronal firing, active-unit fraction, phase concentration and field-linked firing during beta events;
+- neuronal firing, active-unit fraction, phase concentration, and field-linked firing during beta events;
 - screened high-frequency candidate events;
 - candidate-centred beta2 amplitude;
 - spike-order analyses relevant to replay.
@@ -38,27 +38,45 @@ Users should obtain the original data directly from CRCNS and comply with the da
 
 ```text
 HC31/
-├── README.md
-├── .gitattributes
-├── .gitignore
-├── analysis/
-│   ├── 01_primary_beta/
-│   ├── 02_final_temporal_spatial_stats/
-│   ├── 03_spectral/
-│   ├── 04_neuronal_beta/
-│   ├── 05_high_frequency_candidates/
-│   ├── 06_candidate_firing_amplitude/
-│   └── 07_spike_order/
-└── docs/
-    ├── FIGURE_SCRIPT_MAP.md
-    ├── MANIFEST.csv
-    ├── README_CURATED_SCRIPTS.md
-    └── EXCLUDED_SUMMARY.md
+|-- README.md
+|-- CITATION.cff
+|-- .gitattributes
+|-- .gitignore
+|-- analysis/
+|   |-- 01_primary_beta/
+|   |-- 02_final_temporal_spatial_stats/
+|   |-- 03_spectral/
+|   |-- 04_neuronal_beta/
+|   |-- 05_high_frequency_candidates/
+|   |-- 06_candidate_firing_amplitude/
+|   `-- 07_spike_order/
+|-- derived_data/
+|   |-- 01_temporal_beta/
+|   |-- 02_novelty_spatial/
+|   |-- 03_spectral/
+|   |-- 04_neuronal_beta/
+|   |-- 05_candidate_screening/
+|   |-- 06_candidate_firing/
+|   |-- 07_amplitude/
+|   `-- 08_spike_order/
+|-- docs/
+|   |-- FIGURE_SCRIPT_MAP.md
+|   |-- MANIFEST.csv
+|   |-- README_CURATED_SCRIPTS.md
+|   |-- EXCLUDED_SUMMARY.md
+|   |-- REPRODUCIBILITY.md
+|   `-- RELEASE_CHECKLIST.md
+`-- environment/
+    `-- MATLAB_REQUIREMENTS.m
 ```
+
+## Analysis code
+
+The `analysis/` directory contains the curated MATLAB source relevant to the frozen scientific manuscript.
 
 ### `analysis/01_primary_beta`
 
-Core beta/beta2 detection and early analyses, including event time courses, novelty/location analyses, movement relationships and trace-quality checks.
+Core beta/beta2 detection and early analyses, including event time courses, novelty/location analyses, movement relationships, entry-novelty sensitivity, spatial summaries, and trace-quality checks.
 
 ### `analysis/02_final_temporal_spatial_stats`
 
@@ -66,15 +84,15 @@ Final animal-level temporal and spatial summary analyses used for the principal 
 
 ### `analysis/03_spectral`
 
-Spectral analyses used to examine theta, broad-beta and beta2 frequency structure and spectrogram-based context.
+Spectral analyses used to examine theta, broad-beta, and beta2 frequency structure and spectrogram-based context.
 
 ### `analysis/04_neuronal_beta`
 
-Analyses of neuronal firing, active-unit fraction, phase concentration and place-field-linked firing during detector-defined beta events.
+Analyses of neuronal firing, active-unit fraction, phase concentration, and place-field-linked firing during detector-defined beta events.
 
 ### `analysis/05_high_frequency_candidates`
 
-High-frequency candidate detection, screening, state classification, quality-control and tier-assignment pipelines.
+High-frequency candidate detection, screening, state classification, quality-control, and tier-assignment pipelines.
 
 ### `analysis/06_candidate_firing_amplitude`
 
@@ -82,40 +100,60 @@ Candidate-centred firing and beta2-envelope analyses, including matched-control 
 
 ### `analysis/07_spike_order`
 
-Spike-order analyses using several spatial ordering definitions, including the archived/original ordering and later alternative orderings where retained source code is available.
+Spike-order analyses using several spatial-ordering definitions, including the archived/original ordering and later alternative-ordering lineage where retained source code is available.
 
-### `docs/`
+## Derived data
 
-Repository-level provenance and mapping documentation.
+The `derived_data/` directory contains compact manuscript-facing CSV files that allow readers to inspect the reported numerical results without downloading the large raw CRCNS dataset.
 
-- `FIGURE_SCRIPT_MAP.md` maps manuscript figures/results to retained scripts where identifiable.
-- `MANIFEST.csv` lists curated files with source-archive provenance and hashes.
-- `README_CURATED_SCRIPTS.md` describes the code-selection process.
-- `EXCLUDED_SUMMARY.md` records categories of files deliberately omitted from the public-facing code package.
+It includes temporal, novelty/spatial, spectral, neuronal, candidate-screening, candidate-firing, amplitude, and spike-order summaries.
 
-## Code provenance
+See:
 
-The analysis developed over multiple stages. This repository contains the **curated scripts relevant to the final manuscript**, rather than every exploratory, test, backup or superseded file generated during development.
+- `derived_data/README.md`
+- `derived_data/DATA_DICTIONARY.csv`
+- `derived_data/MANIFEST.csv`
 
-Where multiple versions of a script existed, the latest corrected or final version relevant to the manuscript was retained where identifiable.
+The raw Neuralynx recordings and source `resSave.mat` file are not redistributed.
 
-The following are intentionally excluded:
+## Documentation
 
-- raw CRCNS hc-31 recordings;
-- generated figures and bulk result folders;
-- temporary/intermediate files;
-- obsolete or superseded script versions;
-- development/test scripts not required for the final manuscript;
-- bundled copies of third-party software where redistribution is unnecessary;
-- unrelated reference code.
+- `docs/FIGURE_SCRIPT_MAP.md` maps manuscript figures/results to retained code.
+- `docs/MANIFEST.csv` records current repository paths, source-archive provenance, and both archive/current hashes where relevant.
+- `docs/README_CURATED_SCRIPTS.md` describes how the code set was selected.
+- `docs/EXCLUDED_SUMMARY.md` records categories deliberately omitted from the public-facing repository.
+- `docs/REPRODUCIBILITY.md` states which analyses are directly rerunnable, depend on retained intermediate outputs, or lack a preserved final standalone implementation.
+- `environment/MATLAB_REQUIREMENTS.m` documents dependencies and provides a lightweight local environment check.
 
-See `docs/EXCLUDED_SUMMARY.md` and `docs/MANIFEST.csv` for details.
+## Data-root configuration
+
+The retained MATLAB scripts were originally developed with local Windows paths. For repository portability, active personal paths have been replaced with the environment variable:
+
+`HC31_DATA_ROOT`
+
+Set it in MATLAB before running a module, for example:
+
+```matlab
+setenv('HC31_DATA_ROOT', 'D:\path\to\hc31')
+```
+
+If `HC31_DATA_ROOT` is not set or does not point to an existing folder, patched entry scripts prompt the user to select the hc-31 project/data root.
+
+These are path-only portability edits. They do not change the scientific analysis logic.
+
+## Important MATLAB path rule
+
+Do **not** add the entire `analysis/` tree recursively to the MATLAB path.
+
+Several modules contain helper functions with the same filenames but different module-specific implementations. Run a module from its own folder, or add only that module and its intended helper folder to the MATLAB path.
 
 ## Reproducibility status
 
-The repository preserves the principal analysis code used during the HC31 project, but the project is a retrospective reconstruction of a multi-stage analysis history.
+The repository preserves the principal retained HC31 analysis code and includes compact derived data for manuscript-level verification.
 
-Several historical details could not be fully recovered and are reported transparently in the manuscript, including:
+However, the project is a retrospective reconstruction of a multi-stage analysis history. Some final manuscript calculations were reconstructed from retained outputs and later audit/reanalysis steps rather than from a single preserved standalone script.
+
+Known historical limitations include:
 
 - the exact threshold combination underlying the archived **Balanced L2** screen;
 - the exact Run1 low-speed criterion used in one historical candidate-tier assignment;
@@ -125,39 +163,38 @@ Several historical details could not be fully recovered and are reported transpa
 - the original random seed for the archived spike-order analysis;
 - the exact upstream selection rule defining the archived 931-window spike-order starting set.
 
-Some final manuscript results were reconstructed from retained outputs and later audit/reanalysis steps rather than from a single standalone script preserved in B1-B4.
-
-Accordingly, this repository should be read together with:
-
-- `docs/FIGURE_SCRIPT_MAP.md`
-- `docs/MANIFEST.csv`
-- the Methods section of the manuscript
-
-A dedicated `REPRODUCIBILITY.md` and a compact derived-data package will be added before the public release associated with the manuscript.
+See `docs/REPRODUCIBILITY.md` for analysis-by-analysis status.
 
 ## Software requirements
 
 The analyses were performed in MATLAB.
 
-Exact MATLAB release/toolbox requirements vary across analysis branches and are being consolidated before public release.
+A practical compatibility target is MATLAB R2020a or newer. The curated code uses functions from:
 
-Some spectral analyses used or referenced **Chronux**. Chronux source code is not redistributed here; users should obtain it from its official distribution if needed.
+- Signal Processing Toolbox;
+- Statistics and Machine Learning Toolbox.
 
-The raw-data loading workflow also relies on Neuralynx-compatible import utilities for `.ncs` recordings. These third-party utilities are not redistributed in this repository unless their licences explicitly permit it.
+Some branches additionally require:
+
+- Neuralynx MATLAB import utilities, including `Nlx2MatCSC`;
+- Chronux for retained spectral implementations that call Chronux functions.
+
+These third-party dependencies are not redistributed here.
+
+Run `environment/MATLAB_REQUIREMENTS.m` for a lightweight local dependency check.
 
 ## Running the analysis
 
-This repository is not yet intended to function as a single one-command pipeline.
+This repository is not a single one-command pipeline.
 
-The analysis folders preserve the final relevant modules from the original project history. Before attempting to run a module:
+Before running a module:
 
 1. Download the CRCNS hc-31 dataset separately.
-2. Inspect the script header for required input files and directory expectations.
-3. Consult `docs/FIGURE_SCRIPT_MAP.md` for the relationship between scripts and manuscript outputs.
-4. Consult `docs/MANIFEST.csv` for file provenance.
-5. Use the manuscript Methods as the authoritative description of the final statistical and analytical procedures.
-
-A simplified execution guide will be added before public release.
+2. Set `HC31_DATA_ROOT` or allow the script to prompt for the data root.
+3. Run one analysis module at a time rather than recursively adding all of `analysis/` to the MATLAB path.
+4. Inspect the script header for expected upstream inputs.
+5. Consult `docs/FIGURE_SCRIPT_MAP.md` and `docs/REPRODUCIBILITY.md`.
+6. Use the manuscript Methods as the authoritative description of the frozen analysis.
 
 ## Data availability
 
@@ -165,9 +202,9 @@ The original hc-31 recordings are available from CRCNS at:
 
 https://doi.org/10.6080/K0BV7DT2
 
-A compact set of derived data underlying the manuscript figures, tables and summary statistics will be added to this repository or an associated archival deposit before publication.
+Compact derived data underlying manuscript-facing analyses are included under `derived_data/`.
 
-The original CRCNS recordings will not be redistributed.
+The original CRCNS recordings are not redistributed.
 
 ## Ethics
 
@@ -177,13 +214,13 @@ This project is a secondary analysis of previously collected, publicly available
 
 If using the original electrophysiological recordings, please cite the hc-31 dataset and the original source study according to CRCNS guidance.
 
-Citation information for this analysis repository will be added before public release together with the final manuscript citation and archived release DOI.
+GitHub reads `CITATION.cff` to provide repository citation metadata. Version, release date, licence, and archival DOI should be finalized for the public v1.0.0 release.
 
 ## Repository status
 
-**Private development repository - pre-release.**
+**Pre-release repository.**
 
-The scientific manuscript has reached content freeze. Repository documentation, derived-data packaging, dependency documentation and archival release preparation are still in progress.
+The scientific manuscript is content-frozen. Code curation, derived-data packaging, reproducibility documentation, and dependency documentation are present. The remaining release tasks are final QA, licence selection, the public v1.0.0 release, and archival DOI creation.
 
 ## Contact
 

@@ -11,19 +11,25 @@ function hc31_extract_beta_bursts_over_time_FUNC()
 % functions at the bottom.
 %
 % Put this file in:
-%   C:\Users\angel\Documents\MATLAB\CRCN\
+%   <HC31_DATA_ROOT>/
 %
 % Run with:
 %   hc31_extract_beta_bursts_over_time_FUNC
 %
 % Output folder:
-%   C:\Users\angel\Documents\MATLAB\CRCN\beta_burst_over_time_outputs_BETA13_30_FUNC\
+%   <HC31_DATA_ROOT>/beta_burst_over_time_outputs_BETA13_30_FUNC\
 
 clear; clc; close all;
 
 %% Settings
 
-direc = 'C:\Users\angel\Documents\MATLAB\CRCN\';
+direc = getenv('HC31_DATA_ROOT');
+if isempty(direc) || exist(direc, 'dir') ~= 7
+    direc = uigetdir(pwd, 'Select the HC-31 root folder containing resSave.mat');
+    if isequal(direc, 0)
+        error('HC31:NoDataRoot', 'No HC-31 data root selected.');
+    end
+end
 
 animalIndices = 5:9;
 

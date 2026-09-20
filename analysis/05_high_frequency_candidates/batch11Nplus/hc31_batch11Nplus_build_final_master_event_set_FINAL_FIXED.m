@@ -31,7 +31,7 @@ fprintf('------------------------------------------\n');
 
 %% Settings
 
-defaultRoot = 'C:\Users\angel\Documents\MATLAB\CRCN';
+defaultRoot = getenv('HC31_DATA_ROOT');
 
 checkpointEveryNEvents = 100;
 manualMatchToleranceUs = 2000;

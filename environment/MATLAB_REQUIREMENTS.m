@@ -59,12 +59,23 @@
 % Image Processing Toolbox, Optimization Toolbox, or Curve Fitting Toolbox
 % as repository-wide dependencies.
 %
+% Data-root configuration
+% -----------------------
+% Active personal root paths in the curated entry scripts were replaced with
+% the HC31_DATA_ROOT environment variable plus an interactive fallback.
+% Example:
+%   setenv('HC31_DATA_ROOT', 'D:\path\to\hc31')
+%
+% These are path-only portability edits. They do not change analysis logic.
+%
+% MATLAB path isolation
+% ---------------------
+% Do not add the complete analysis tree recursively to the MATLAB path. Some
+% modules contain helper functions with the same filename but different local
+% implementations. Run one module at a time or add only its intended folder.
+%
 % Platform notes
 % --------------
-% Many retained scripts were developed with Windows-style paths and local
-% folder assumptions. Paths should be configured before execution on another
-% machine or operating system.
-%
 % Neuralynx import utilities may include platform-specific binaries. Their
 % compatibility should be checked separately for the user's MATLAB release
 % and operating system.
@@ -151,4 +162,6 @@ fprintf('\nNotes\n');
 fprintf('-----\n');
 fprintf('Nlx2MatCSC is required by raw Neuralynx-loading branches.\n');
 fprintf('Chronux functions are required only by retained scripts that call them.\n');
+fprintf('Set HC31_DATA_ROOT or use the interactive data-root prompt before running modules.\n');
+fprintf('Do not add the full analysis tree recursively to the MATLAB path.\n');
 fprintf('See docs/REPRODUCIBILITY.md before attempting a full rerun.\n\n');

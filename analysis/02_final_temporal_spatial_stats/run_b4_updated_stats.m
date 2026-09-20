@@ -26,9 +26,12 @@ runnerDir = fileparts(mfilename('fullpath'));
 if ~isempty(runnerDir); addpath(runnerDir, '-begin'); end
 
 %% ---------------- Settings ----------------
-projectRoot = 'C:\Users\angel\Documents\MATLAB\CRCN';
-if exist(projectRoot, 'dir') ~= 7
-    error('Could not find project root: %s', projectRoot);
+projectRoot = getenv('HC31_DATA_ROOT');
+if isempty(projectRoot) || exist(projectRoot, 'dir') ~= 7
+    projectRoot = uigetdir(pwd, 'Select the HC-31 project/data root folder');
+    if isequal(projectRoot, 0)
+        error('HC31:NoDataRoot', 'No HC-31 project/data root selected.');
+    end
 end
 cd(projectRoot);
 

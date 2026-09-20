@@ -19,22 +19,22 @@
 %   If Chronux is not available, the script uses MATLAB spectrogram/pwelch.
 %
 % Inputs:
-%   C:\Users\angel\Documents\MATLAB\CRCN\resSave.mat
-%   C:\Users\angel\Documents\MATLAB\CRCN\csc_files\...
+%   <HC31_DATA_ROOT>/resSave.mat
+%   <HC31_DATA_ROOT>/csc_files\...
 %   Optional burst table from:
 %       beta_burst_over_time_outputs_BETA13_30_FUNC\hc31_detected_beta_bursts.csv
 %   If that is not found, it falls back to:
 %       beta_burst_over_time_outputs_FUNC\hc31_detected_beta_bursts.csv
 %
 % Outputs:
-%   C:\Users\angel\Documents\MATLAB\CRCN\power_spectra_spectrogram_outputs\
+%   <HC31_DATA_ROOT>/power_spectra_spectrogram_outputs\
 %       hc31_power_spectrum_summary.csv
 %       hc31_condition_power_spectra_long.csv
 %       hc31_burst_peak_frequency_20_30Hz.csv
 %       figures\
 %
 % Run:
-%   cd('C:\Users\angel\Documents\MATLAB\CRCN')
+%   cd('<HC31_DATA_ROOT>')
 %   psdspec
 %
 % If MATLAB refuses to run scripts directly:
@@ -47,7 +47,13 @@ clear; clc; close all;
 % 1. Settings
 % -------------------------------------------------------------------------
 
-direc = 'C:\Users\angel\Documents\MATLAB\CRCN\';
+direc = getenv('HC31_DATA_ROOT');
+if isempty(direc) || exist(direc, 'dir') ~= 7
+    direc = uigetdir(pwd, 'Select the HC-31 root folder containing resSave.mat');
+    if isequal(direc, 0)
+        error('HC31:NoDataRoot', 'No HC-31 data root selected.');
+    end
+end
 
 animalIndices = 5:9;
 targetFs = 1000;

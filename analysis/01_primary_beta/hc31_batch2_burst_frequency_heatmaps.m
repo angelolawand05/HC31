@@ -48,7 +48,7 @@ clear; clc; close all;
 %% ---------------- USER SETTINGS ----------------
 % Leave these blank to auto-detect files from the current folder.
 % Typical place to run from:
-%   C:\Users\angel\Documents\MATLAB\CRCN
+%   <HC31_DATA_ROOT>
 rootDir = pwd;
 resSavePath = '';
 burstLocationFile = '';

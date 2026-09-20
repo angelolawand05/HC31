@@ -49,7 +49,7 @@ fprintf('---------------------------------------------------\n');
 
 %% User-editable settings
 
-defaultRoot = 'C:\Users\angel\Documents\MATLAB\CRCN';
+defaultRoot = getenv('HC31_DATA_ROOT');
 
 animalIndices = 5:9;
 fallbackAnimalIDs = {'ANM00190422','ANM204878','ANM212379','ANM228899','ANM228900'};

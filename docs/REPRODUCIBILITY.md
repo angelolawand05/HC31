@@ -30,7 +30,7 @@ The script may still require:
 
 The retained code can regenerate the final summary or figure from archived intermediate CSV or MAT outputs, but does not itself recreate all upstream inputs from raw data.
 
-These analyses become reproducible once the required derived/intermediate files are included in the public derived-data package.
+The current `derived_data/` package supports manuscript-level verification for these analyses when the required retained outputs are included there.
 
 ### C - Partial or closest retained implementation
 
@@ -66,19 +66,19 @@ Principal source files used across the retained analyses include:
 
 Some scripts also expect outputs produced by earlier HC31 analysis stages.
 
-The repository will eventually include a compact derived-data package for manuscript-level verification, but it will not redistribute the raw CRCNS recordings.
+The repository includes a compact `derived_data/` package for manuscript-level verification. It does not redistribute the raw CRCNS recordings.
 
 ---
 
 # 2. Important execution limitations
 
-The selected scripts were copied unchanged from the retained B1-B4 project archives.
+The selected scripts were curated from the retained B1-B4 project archives. Before release, active personal Windows root paths were replaced with the `HC31_DATA_ROOT` environment variable plus an interactive fallback. These are path-only portability edits and do not change the scientific analysis logic.
 
 They are not yet a portable one-command pipeline.
 
 Common issues include:
 
-- hard-coded Windows paths;
+- historical output-folder assumptions;
 - interactive `uigetfile` prompts;
 - assumptions about historical HC31 output-folder names;
 - scripts that expect outputs from earlier analysis stages;
@@ -87,7 +87,12 @@ Common issues include:
 
 For this reason, the status tables below distinguish the existence of the relevant retained source code from immediate out-of-the-box execution.
 
-A future configuration layer may make path handling easier without changing the scientific procedures.
+Set `HC31_DATA_ROOT` in MATLAB before running a module, or use the interactive root-folder prompt when available.
+
+
+### MATLAB path isolation
+
+Do not use `addpath(genpath('analysis'))` for the full repository. Several modules contain helper functions with the same filename but different module-specific implementations. Run each module from its own folder, or add only that module and its intended helper folder to the MATLAB path.
 
 ---
 
@@ -127,7 +132,7 @@ Main manuscript links:
 
 ### Caveat
 
-The scripts contain local path assumptions and should be configured before rerunning.
+Set `HC31_DATA_ROOT` to the local hc-31 project/data root before rerunning, or use the interactive folder prompt.
 
 ---
 
@@ -236,7 +241,7 @@ That script contains an earlier related occupancy-preserving/permutation impleme
 
 ### Public reproducibility implication
 
-The final derived-data package should provide:
+The included `derived_data/` package provides compact manuscript-facing summaries including:
 - the observed novelty contrast;
 - the final null-summary output where available;
 - the reported p value;
@@ -358,7 +363,7 @@ Therefore, Batch 8 should be treated as the source lineage, not as an exact raw-
 
 ### Public reproducibility implication
 
-The derived-data package should include the final animal-level Figure 13 values and table-source data.
+The included `derived_data/04_neuronal_beta/figure13_statistics.csv` provides the final manuscript-facing Figure 13 values and table-source summary.
 
 A clean standalone implementation of the frozen Methods would improve full raw-data reproducibility if created later.
 
@@ -443,7 +448,7 @@ The retained Batch 11L2 code represents the morphology/rule-screening branch, no
 
 ### Public reproducibility implication
 
-The derived-data package should include:
+The included `derived_data/` package includes or should be read alongside:
 - the 225-candidate evaluation table if redistribution is appropriate;
 - clear/ambiguous labels as allowed;
 - model-input features used in the manuscript;
@@ -491,7 +496,7 @@ Primary retained lineage:
 
 Batch 11P is a synthesis script that regenerates summary tables and figures from canonical CSV outputs rather than raw CSC data.
 
-These analyses will be much more reproducible once the required canonical CSVs are included in the final derived-data package.
+The current `derived_data/` package provides manuscript-facing summaries, while raw-data regeneration still depends on retained canonical/intermediate outputs that are not all redistributed.
 
 ---
 
@@ -531,7 +536,7 @@ It does not start from the original raw hc-31 data by itself.
 
 ### Public reproducibility implication
 
-To make Figures 17-18 directly reproducible without rerunning all Stage B raw processing, the final derived-data/intermediate package should include the required pair-level CSV and any non-sensitive checkpoint data that can be redistributed.
+The included derived-data package provides corrected manuscript-facing PETH and summary/statistical tables for Figures 17-18. Full Stage B regeneration still requires retained intermediate inputs not all redistributed here.
 
 ---
 
@@ -593,7 +598,7 @@ The manuscript Methods describes the final definitions and Figure 20 reports the
 
 ### Public reproducibility implication
 
-The final derived-data package should contain the event-level or summary outputs for all four Figure 20 orderings.
+The included `derived_data/08_spike_order/figure20_summary.csv` provides the final manuscript-facing four-ordering summary. Exact raw-data recalculation scripts remain unavailable for three later orderings.
 
 If clean recalculation scripts are reconstructed later, they should be added as new reproducibility scripts with provenance clearly distinguished from the archived historical code.
 
@@ -628,57 +633,55 @@ If clean recalculation scripts are reconstructed later, they should be added as 
 
 ---
 
-# 12. What the final derived-data package should provide
+# 12. Included derived-data package
 
-The derived-data package is important because several final manuscript calculations are verifiable from retained outputs even when exact standalone raw-data scripts were not preserved.
+The repository includes a compact `derived_data/` package for manuscript-level inspection and verification when exact standalone raw-data scripts were not preserved.
 
-At minimum, it should contain machine-readable source data for:
+It contains machine-readable summaries for:
 
 ## Primary beta/beta2
 - animal-level first-half and second-half rates;
-- temporal slopes and sensitivity summaries;
+- temporal slopes and time-course values;
 - novel/familiar animal-level and stage-level rates;
 - movement summaries;
-- spatial held-out summary outputs.
+- final held-out spatial summary outputs.
 
 ## Spectral
 - per-animal theta, broad-beta and beta2 peak-frequency summaries;
 - line-noise QC summaries used in the manuscript.
 
 ## Detector-defined neuronal analyses
-- final Figure 13 animal-level effects;
-- final phase-unit summary table;
-- recording-level phase summaries;
-- field-linked firing summaries.
+- final Figure 13 statistics;
+- phase-unit and recording-level summaries;
+- field-annotation summaries.
 
 ## High-frequency screening
-- final candidate evaluation summary;
-- final Tier A+C master/tier summary tables;
-- final screening metrics supporting the manuscript.
+- final reviewed-label counts;
+- screening evaluation summary;
+- manuscript Tier A+C population summaries.
 
 ## Candidate firing
 - Figure 16 per-animal event/control firing table;
-- PRE, gap and traversal-plus-gap animal-level summaries;
-- fixed-control sensitivity summary.
+- PRE, gap, and traversal-plus-gap manuscript-facing summaries.
 
 ## Candidate-centred beta2 amplitude
-- final pair-level or animal-level corrected data sufficient to reconstruct Figures 17-18;
-- final Figure 18 statistics table.
+- corrected Figure 17 PETH source data;
+- Figure 18 animal-level effects and statistics;
+- amplitude attrition summary.
 
 ## Spike order
-- event or summary tables for all four orderings;
-- Figure 19 example statistics;
-- Figure 20 source table.
+- Figure 19 example-event output;
+- Figure 20 four-ordering summary table.
 
-The derived-data package should not contain the original raw CRCNS recordings.
+See `derived_data/DATA_DICTIONARY.csv` for file-level provenance classes. The derived-data package does not contain the original raw CRCNS recordings.
 
 ---
 
 # 13. What can be claimed publicly
 
-With the current curated code alone, the repository can accurately state:
+With the current curated code and derived-data package, the repository can accurately state:
 
-> This repository contains the curated retained MATLAB source code underlying the HC31 analysis and documents which manuscript analyses are directly rerunnable, depend on retained intermediate outputs, or lack a preserved final standalone implementation.
+> This repository contains curated retained MATLAB source code and compact manuscript-facing derived data for the HC31 analysis, and documents which analyses are directly rerunnable, depend on retained intermediate outputs, or lack a preserved final standalone implementation.
 
 It should **not yet** claim:
 
@@ -710,13 +713,12 @@ These limitations do not invalidate the retained analyses, but they prevent a cl
 
 Before the repository is made public:
 
-1. Add `environment/MATLAB_REQUIREMENTS.md`.
-2. Add the compact `derived_data/` package described above.
-3. Test all status-A scripts after replacing local path assumptions with a documented configuration workflow.
-4. Test all status-B scripts against the derived/intermediate files intended for release.
-5. Decide whether to create new clean reproduction scripts for status-D analyses.
-6. Add `CITATION.cff`.
-7. Tag the tested manuscript-associated repository release.
-8. Archive that release with a persistent DOI.
+1. Test representative status-A scripts with `HC31_DATA_ROOT` on a clean MATLAB path.
+2. Test status-B scripts against the retained/intermediate inputs intended for release.
+3. Decide whether to create new clean reproduction scripts for status-D analyses.
+4. Select a repository licence.
+5. Tag the tested manuscript-associated repository release.
+6. Archive that release with a persistent DOI.
+7. Update `CITATION.cff` with version, release date, licence, and DOI.
 
 No new script should be represented as historical source code if it was reconstructed after manuscript freeze. New reproduction wrappers should be clearly labelled as such.

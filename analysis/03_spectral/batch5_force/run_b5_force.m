@@ -43,7 +43,13 @@ clear; clc; close all;
 runnerDir = fileparts(mfilename('fullpath'));
 if ~isempty(runnerDir); addpath(runnerDir, '-begin'); end
 %% ---------------- USER SETTINGS ----------------
-rootDir = 'C:\Users\angel\Documents\MATLAB\CRCN';
+rootDir = getenv('HC31_DATA_ROOT');
+if isempty(rootDir) || exist(rootDir, 'dir') ~= 7
+    rootDir = uigetdir(pwd, 'Select the HC-31 project/data root folder');
+    if isequal(rootDir, 0)
+        error('HC31:NoDataRoot', 'No HC-31 project/data root selected.');
+    end
+end
 % Leave blank to auto-detect.
 spectraLongFile = fullfile(rootDir, 'allresults', 'power_spectra_spectrogram_outputs', 'hc31_condition_power_spectra_long.csv');
 if exist(spectraLongFile, 'file') ~= 2

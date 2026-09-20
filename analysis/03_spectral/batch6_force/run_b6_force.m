@@ -47,10 +47,16 @@ clear; clc; close all;
 runnerDir = fileparts(mfilename('fullpath'));
 if ~isempty(runnerDir); addpath(runnerDir, '-begin'); end
 %% ---------------- USER SETTINGS ----------------
-rootDir = 'C:\Users\angel\Documents\MATLAB\CRCN';
+rootDir = getenv('HC31_DATA_ROOT');
+if isempty(rootDir) || exist(rootDir, 'dir') ~= 7
+    rootDir = uigetdir(pwd, 'Select the HC-31 project/data root folder');
+    if isequal(rootDir, 0)
+        error('HC31:NoDataRoot', 'No HC-31 project/data root selected.');
+    end
+end
 resSavePath = fullfile(rootDir, 'resSave.mat');
 if exist(resSavePath, 'file') ~= 2
-    error('Forced Batch 6 could not find resSave.mat at C:\Users\angel\Documents\MATLAB\CRCN\resSave.mat');
+    error('Forced Batch 6 could not find resSave.mat under selected HC-31 root: %s', resSavePath);
 end
 
 % Optional burst overlay table. Use the first existing known location.

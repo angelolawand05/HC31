@@ -8,10 +8,20 @@ codegen/
 *.log
 *.tmp
 
-# Raw/external data should never be committed
+# HC31 raw/source data - never commit
+*.ncs
+resSave.mat
+csc_files/
+neuralynximport/
 raw_data/
 data/raw/
 external_data/
+
+# Local archive bundles
+b1.zip
+b2.zip
+b3.zip
+b4.zip
 
 # Generated/intermediate analysis outputs
 scratch/

@@ -2,7 +2,7 @@
 %
 % HOW TO RUN IN YOUR MATLAB SETUP:
 %
-%   cd('C:\Users\angel\Documents\MATLAB\CRCN')
+%   cd('<HC31_DATA_ROOT>')
 %   clear
 %   clc
 %   close all

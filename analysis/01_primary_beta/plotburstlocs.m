@@ -20,10 +20,10 @@
 %   2. beta_burst_over_time_outputs_FUNC/hc31_detected_beta_bursts.csv
 %
 % Output folder:
-%   C:\Users\angel\Documents\MATLAB\CRCN\burst_location_outputs\
+%   <HC31_DATA_ROOT>/burst_location_outputs\
 %
 % Run:
-%   cd('C:\Users\angel\Documents\MATLAB\CRCN')
+%   cd('<HC31_DATA_ROOT>')
 %   plotburstlocs
 %
 % If MATLAB refuses to run scripts directly:
@@ -36,7 +36,13 @@ clear; clc; close all;
 % 1. Settings
 % -------------------------------------------------------------------------
 
-direc = 'C:\Users\angel\Documents\MATLAB\CRCN\';
+direc = getenv('HC31_DATA_ROOT');
+if isempty(direc) || exist(direc, 'dir') ~= 7
+    direc = uigetdir(pwd, 'Select the HC-31 root folder containing resSave.mat');
+    if isequal(direc, 0)
+        error('HC31:NoDataRoot', 'No HC-31 data root selected.');
+    end
+end
 
 animalIndices = 5:9;
 speedThresholdCmS = 5;

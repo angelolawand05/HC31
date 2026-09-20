@@ -73,10 +73,15 @@ end
 
 %% Locate epoch-state duration table for corrected rate summary
 
-defaultStateSummaryPath = fullfile( ...
-    'C:\Users\angel\Documents\MATLAB\CRCN', ...
-    'hc31_batch11M3_corrected_pre_rest_post_state_classification', ...
-    'hc31_batch11M3_epoch_state_summary.csv');
+dataRoot = getenv('HC31_DATA_ROOT');
+if ~isempty(dataRoot) && exist(dataRoot, 'dir') == 7
+    defaultStateSummaryPath = fullfile( ...
+        dataRoot, ...
+        'hc31_batch11M3_corrected_pre_rest_post_state_classification', ...
+        'hc31_batch11M3_epoch_state_summary.csv');
+else
+    defaultStateSummaryPath = '';
+end
 
 stateSummaryPath = '';
 
