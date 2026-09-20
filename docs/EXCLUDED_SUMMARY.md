@@ -3,7 +3,7 @@
 The following were inspected but excluded because they are not needed for the final manuscript code base or are superseded/reference material:
 
 - All PNG/JPG/FIG/PDF/DOCX outputs.
-- All analysis-result CSVs/MAT checkpoints (these belong in a later **derived-data** repository, not this code ZIP).
+- Bulk historical analysis-result CSVs and MAT checkpoints not required for the compact manuscript-facing derived-data package.
 - B1 bundled Chronux tree.
 - B1 Neuralynx import/export tree.
 - B1 “Code from Walsh et al.” reference scripts.

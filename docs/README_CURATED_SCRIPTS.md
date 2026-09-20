@@ -1,6 +1,6 @@
-# HC31 curated analysis scripts - repository candidate set v1.0
+# HC31 curated analysis scripts
 
-This package is a **curated code-only selection** from the B1-B4 HC31 archives for the frozen scientific manuscript **HC31 v10.3.24**.
+This package is a **curated code-only selection** from the B1-B4 HC31 archives for the accompanying HC31 manuscript.
 
 It intentionally excludes analysis outputs, figures, CSV result tables, MAT checkpoints, old backups, test scripts, superseded variants, and third-party packages. The goal is to keep only the analysis modules that directly generated, or are upstream dependencies of, results retained in the final manuscript.
 
@@ -43,7 +43,7 @@ Main manuscript links: Figure 19 and the original-order component of Figure 20.
 
 ## Important: this is a curated source set
 
-The scripts were curated from the retained B1-B4 archives. Before release, active personal Windows root paths were replaced with the `HC31_DATA_ROOT` environment variable plus an interactive fallback where appropriate. These are path-only portability edits and do not alter analysis logic. Historical source hashes and current repository hashes are both retained in `docs/MANIFEST.csv`.
+The scripts were curated from the retained B1-B4 archives. Active personal Windows root paths were replaced with the `HC31_DATA_ROOT` environment variable plus an interactive fallback where appropriate. These are path-only portability edits and do not alter analysis logic. Historical source hashes and current repository hashes are both retained in `docs/MANIFEST.csv`.
 
 The repository now also includes dependency documentation, reproducibility documentation, and compact manuscript-facing derived data. It is still not a single one-command pipeline.
 
@@ -56,7 +56,7 @@ The repository now also includes dependency documentation, reproducibility docum
 
 ## Important code gaps found in B1-B4
 
-The archives do **not** contain a standalone script that exactly reproduces every final manuscript calculation. These should be resolved before making a public reproducibility claim:
+The archives do **not** contain a standalone script that exactly reproduces every final manuscript calculation. The following limitations affect exact reproduction of some final manuscript calculations:
 
 1. **Final circular-shift / held-out spatial tests.** The final manuscript describes a 2,000,000-draw moving-exposure circular-shift null and exact hypergeometric held-out overlap calculation. The retained `hc31_batch4_novelty_statistics.m` is an earlier related implementation and does not encode the final procedure exactly.
 2. **Final detector-defined beta event-control analysis (Figure 13).** Batch 8 is the closest retained source pipeline, but its control implementation does not exactly match the final manuscript's 200-control / nearest-speed-control description and its archived summary values are not numerically identical to the final table.

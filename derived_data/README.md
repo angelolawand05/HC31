@@ -77,6 +77,3 @@ for the code-level reproducibility status.
 `DATA_DICTIONARY.csv` identifies the manuscript role and provenance of every data file.
 `MANIFEST.csv` provides file sizes and SHA-256 hashes.
 
-## Version
-
-Prepared for the HC31 scientific manuscript frozen at v10.3.24.

@@ -72,9 +72,9 @@ The repository includes a compact `derived_data/` package for manuscript-level v
 
 # 2. Important execution limitations
 
-The selected scripts were curated from the retained B1-B4 project archives. Before release, active personal Windows root paths were replaced with the `HC31_DATA_ROOT` environment variable plus an interactive fallback. These are path-only portability edits and do not change the scientific analysis logic.
+The selected scripts were curated from the retained B1-B4 project archives. Active personal Windows root paths were replaced with the `HC31_DATA_ROOT` environment variable plus an interactive fallback. These are path-only portability edits and do not change the scientific analysis logic.
 
-They are not yet a portable one-command pipeline.
+They do not constitute a portable one-command pipeline.
 
 Common issues include:
 
@@ -239,15 +239,13 @@ Closest retained code:
 
 That script contains an earlier related occupancy-preserving/permutation implementation and should not be presented as exact code for the final p=0.0571 calculation.
 
-### Public reproducibility implication
+### Reproducibility implication
 
 The included `derived_data/` package provides compact manuscript-facing summaries including:
 - the observed novelty contrast;
 - the final null-summary output where available;
 - the reported p value;
 - enough audit metadata to verify the manuscript result.
-
-If a clean final implementation is later reconstructed, it should be added as a clearly new reproduction script rather than silently replacing the retained historical source.
 
 ---
 
@@ -361,7 +359,7 @@ Archived Batch 8 summary values are also not numerically identical to all final 
 
 Therefore, Batch 8 should be treated as the source lineage, not as an exact raw-data reproduction of the final Figure 13 table.
 
-### Public reproducibility implication
+### Reproducibility implication
 
 The included `derived_data/04_neuronal_beta/figure13_statistics.csv` provides the final manuscript-facing Figure 13 values and table-source summary.
 
@@ -446,7 +444,7 @@ No standalone B1-B4 script implementing that exact final ridge-model analysis wa
 
 The retained Batch 11L2 code represents the morphology/rule-screening branch, not the missing final ridge model.
 
-### Public reproducibility implication
+### Reproducibility implication
 
 The included `derived_data/` package includes or should be read alongside:
 - the 225-candidate evaluation table if redistribution is appropriate;
@@ -534,7 +532,7 @@ This script reads the completed Stage B pair CSV and checkpoint MAT, removes the
 
 It does not start from the original raw hc-31 data by itself.
 
-### Public reproducibility implication
+### Reproducibility implication
 
 The included derived-data package provides corrected manuscript-facing PETH and summary/statistical tables for Figures 17-18. Full Stage B regeneration still requires retained intermediate inputs not all redistributed here.
 
@@ -596,11 +594,9 @@ Standalone B1-B4 scripts were not identified for the later recalculated ordering
 
 The manuscript Methods describes the final definitions and Figure 20 reports the resulting counts and corrected statistics, but the exact final recalculation scripts were not preserved in B1-B4.
 
-### Public reproducibility implication
+### Reproducibility implication
 
 The included `derived_data/08_spike_order/figure20_summary.csv` provides the final manuscript-facing four-ordering summary. Exact raw-data recalculation scripts remain unavailable for three later orderings.
-
-If clean recalculation scripts are reconstructed later, they should be added as new reproducibility scripts with provenance clearly distinguished from the archived historical code.
 
 ---
 
@@ -677,19 +673,17 @@ See `derived_data/DATA_DICTIONARY.csv` for file-level provenance classes. The de
 
 ---
 
-# 13. What can be claimed publicly
+# 13. Repository reproducibility scope
 
-With the current curated code and derived-data package, the repository can accurately state:
+The current curated code and derived-data package support the following repository statement:
 
 > This repository contains curated retained MATLAB source code and compact manuscript-facing derived data for the HC31 analysis, and documents which analyses are directly rerunnable, depend on retained intermediate outputs, or lack a preserved final standalone implementation.
 
-It should **not yet** claim:
+The repository does **not** claim:
 
 > All manuscript results can be reproduced from raw hc-31 data by running the scripts in this repository.
 
 That stronger statement is not supported by the retained B1-B4 material.
-
-Once derived data, environment documentation, and any clean missing reproduction scripts are added and tested, the repository statement can be updated accordingly.
 
 ---
 
@@ -709,16 +703,6 @@ These limitations do not invalidate the retained analyses, but they prevent a cl
 
 ---
 
-# 15. Recommended next reproducibility tasks
+# 15. Provenance convention
 
-Before the repository is made public:
-
-1. Test representative status-A scripts with `HC31_DATA_ROOT` on a clean MATLAB path.
-2. Test status-B scripts against the retained/intermediate inputs intended for release.
-3. Decide whether to create new clean reproduction scripts for status-D analyses.
-4. Select a repository licence.
-5. Tag the tested manuscript-associated repository release.
-6. Archive that release with a persistent DOI.
-7. Update `CITATION.cff` with version, release date, licence, and DOI.
-
-No new script should be represented as historical source code if it was reconstructed after manuscript freeze. New reproduction wrappers should be clearly labelled as such.
+Reconstructed reproduction code should be clearly labelled as such and should not be represented as historical source code.
