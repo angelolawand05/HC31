@@ -2,16 +2,22 @@ cff-version: 1.2.0
 message: "If you use this software, please cite this repository and the associated manuscript."
 type: software
 title: "HC31: MATLAB analysis code for hippocampal beta2 events during exploration of an expanding environment"
+
 authors:
   - family-names: "Lawand"
     given-names: "Angelo"
+
 repository-code: "https://github.com/angelolawand05/HC31"
 url: "https://github.com/angelolawand05/HC31"
+
+license: MIT
+
 abstract: >-
   Curated MATLAB analysis code and provenance documentation for a secondary
   analysis of the CRCNS hc-31 dorsal CA1 dataset examining temporal changes
   in hippocampal beta2 events during exploration of a progressively expanding
   environment.
+
 keywords:
   - hippocampus
   - CA1
@@ -21,11 +27,3 @@ keywords:
   - CRCNS
   - MATLAB
   - reproducibility
-
-# Before the public v1.0.0 release, add:
-# version: "1.0.0"
-# date-released: "YYYY-MM-DD"
-# doi: "10.xxxx/zenodo.xxxxxxx"
-#
-# After manuscript publication, consider adding a preferred-citation block
-# containing the final journal citation.
