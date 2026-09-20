@@ -10,8 +10,8 @@ This repository supports the analysis reported in the accompanying manuscript. T
 
 The central analyses examine:
 
-- changes in beta2 (23–30 Hz) event rates over the first exploration session (Run1);
-- broad-beta (13–30 Hz) and beta2 event populations;
+- changes in beta2 (23-30 Hz) event rates over the first exploration session (Run1);
+- broad-beta (13-30 Hz) and beta2 event populations;
 - novel-versus-familiar spatial comparisons;
 - spectral structure and the relationship of beta2-band activity to theta harmonics;
 - neuronal firing, active-unit fraction, phase concentration and field-linked firing during beta events;
@@ -125,7 +125,7 @@ Several historical details could not be fully recovered and are reported transpa
 - the original random seed for the archived spike-order analysis;
 - the exact upstream selection rule defining the archived 931-window spike-order starting set.
 
-Some final manuscript results were reconstructed from retained outputs and later audit/reanalysis steps rather than from a single standalone script preserved in B1–B4.
+Some final manuscript results were reconstructed from retained outputs and later audit/reanalysis steps rather than from a single standalone script preserved in B1-B4.
 
 Accordingly, this repository should be read together with:
 
@@ -181,7 +181,7 @@ Citation information for this analysis repository will be added before public re
 
 ## Repository status
 
-**Private development repository — pre-release.**
+**Private development repository - pre-release.**
 
 The scientific manuscript has reached content freeze. Repository documentation, derived-data packaging, dependency documentation and archival release preparation are still in progress.
 
