@@ -243,9 +243,9 @@ That script contains an earlier related occupancy-preserving/permutation impleme
 
 The included `derived_data/` package provides compact manuscript-facing summaries including:
 - the observed novelty contrast;
-- the final null-summary output where available;
-- the reported p value;
-- enough audit metadata to verify the manuscript result.
+- the reported final circular-shift p value;
+- related entry-novelty and speed-adjusted sensitivity results;
+- audit metadata identifying these values as frozen manuscript summaries.
 
 ---
 
@@ -363,7 +363,7 @@ Therefore, Batch 8 should be treated as the source lineage, not as an exact raw-
 
 The included `derived_data/04_neuronal_beta/figure13_statistics.csv` provides the final manuscript-facing Figure 13 values and table-source summary.
 
-A clean standalone implementation of the frozen Methods would improve full raw-data reproducibility if created later.
+No standalone implementation matching the frozen Methods is retained, so the exact final Figure 13 control procedure cannot be reproduced from raw data using this repository alone.
 
 ---
 
@@ -446,13 +446,12 @@ The retained Batch 11L2 code represents the morphology/rule-screening branch, no
 
 ### Reproducibility implication
 
-The included `derived_data/` package includes or should be read alongside:
-- the 225-candidate evaluation table if redistribution is appropriate;
-- clear/ambiguous labels as allowed;
-- model-input features used in the manuscript;
-- final held-out predictions or summary metrics where available.
+The included `derived_data/05_candidate_screening/` directory provides manuscript-facing screening summaries:
+- `manual_review_label_counts.csv` records the four review-class counts for the 225-candidate evaluation set;
+- `screening_evaluation_summary.csv` records the evaluation-set size, 64 clear-label count, held-out balanced accuracy, and ROC area reported in the manuscript;
+- `tier_population_summary.csv` records the downstream Tier A, Tier C, and context-specific candidate counts.
 
-A new clean implementation may be added later only if it is reconstructed directly from the frozen manuscript definition and retained inputs.
+The repository does not include the row-level 225-candidate evaluation table, the ridge-model input matrix, a fitted ridge model, or per-candidate held-out predictions. The reported screening summary can therefore be inspected directly, but the exact final ridge-model fit and prediction procedure cannot be rerun from the retained repository contents.
 
 ---
 

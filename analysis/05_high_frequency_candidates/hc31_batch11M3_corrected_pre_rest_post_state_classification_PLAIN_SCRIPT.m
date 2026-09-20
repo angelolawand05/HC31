@@ -2095,7 +2095,7 @@ end
 fprintf('\nBatch 11M3 complete.\n');
 fprintf('Output folder:\n  %s\n\n', outputFolder);
 
-fprintf('Primary files to send back:\n');
+fprintf('Primary output files:\n');
 fprintf('  hc31_batch11M3_state_windows.csv\n');
 fprintf('  hc31_batch11M3_epoch_state_summary.csv\n');
 fprintf('  hc31_batch11M3_candidate_sleep_ripples_with_state.csv\n');

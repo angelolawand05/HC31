@@ -40,6 +40,7 @@ Users should obtain the original data directly from CRCNS and comply with the da
 HC31/
 |-- README.md
 |-- CITATION.cff
+|-- LICENSE
 |-- .gitattributes
 |-- .gitignore
 |-- analysis/

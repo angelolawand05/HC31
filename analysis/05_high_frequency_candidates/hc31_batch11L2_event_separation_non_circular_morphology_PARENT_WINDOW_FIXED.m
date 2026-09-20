@@ -39,8 +39,8 @@
 %
 % IMPORTANT
 % ---------
-% These are candidate rules trained on an AI-assisted blinded single-review
-% sample. They are not yet a final validated physiological SWR detector.
+% These candidate rules were developed from blinded single-review labels
+% and were used for internal screening; they are not a validated physiological SWR detector.
 
 clearvars -except scriptFile scriptFolder txt
 clc
@@ -3644,13 +3644,13 @@ if fid >= 0
         'No CA1 unit-count or spike-count feature is ', ...
         'used by the Batch 11L2 candidate rules.\n']);
     fprintf(fid, [ ...
-        'The manual labels remain single-review labels, ', ...
-        'so the second-review template should be completed ', ...
-        'before a rule is locked.\n']);
+        'The manual labels are single-review labels; ', ...
+        'the second-review template records cases flagged ', ...
+        'for additional review.\n']);
     fprintf(fid, [ ...
-        'Feature performance remains internal validation on ', ...
-        'the 225-event review sample. Full-event application ', ...
-        'will be performed only after reviewing these results.\n']);
+        'Feature performance is internal validation on ', ...
+        'the 225-event review sample and should not be ', ...
+        'interpreted as full-candidate validation.\n']);
 
     fclose(fid);
 end
@@ -3660,7 +3660,7 @@ end
 fprintf('\nBatch 11L2 complete.\n');
 fprintf('Output folder:\n  %s\n\n', outputFolder);
 
-fprintf('Please send back:\n');
+fprintf('Key output files:\n');
 fprintf('  hc31_batch11L2_refined_event_morphology.csv\n');
 fprintf('  hc31_batch11L2_split_child_event_suggestions.csv\n');
 fprintf('  hc31_batch11L2_recommended_non_circular_rules.csv\n');
@@ -3670,8 +3670,8 @@ fprintf('  hc31_batch11L2_event_level_predictions.csv\n');
 fprintf('  hc31_batch11L2_SECOND_REVIEW_TEMPLATE.csv\n');
 fprintf('  hc31_batch11L2_refinement_summary.txt\n');
 fprintf('  summary PNG files\n');
-fprintf('  diagnostic figures folder, preferably zipped\n\n');
+fprintf('  diagnostic figures folder\n\n');
 
-fprintf(['Do not run the refined rule over all candidates ', ...
-    'until the Batch 11L2 results and second-review list ', ...
-    'have been inspected.\n']);
+fprintf(['Interpretation note: these refined rules are ', ...
+    'review-sample screening outputs and do not constitute ', ...
+    'a validated full-candidate detector.\n']);

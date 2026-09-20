@@ -1,8 +1,8 @@
 # HC31 curated analysis scripts
 
-This package is a **curated code-only selection** from the B1-B4 HC31 archives for the accompanying HC31 manuscript.
+The `analysis/` tree is a **curated source-code selection** from the B1-B4 HC31 archives for the accompanying HC31 manuscript.
 
-It intentionally excludes analysis outputs, figures, CSV result tables, MAT checkpoints, old backups, test scripts, superseded variants, and third-party packages. The goal is to keep only the analysis modules that directly generated, or are upstream dependencies of, results retained in the final manuscript.
+Within `analysis/`, generated outputs, figures, CSV result tables, MAT checkpoints, old backups, test scripts, superseded variants, and third-party packages are intentionally excluded. Compact manuscript-facing derived data are provided separately under `derived_data/`. The retained source modules directly generated, or are upstream dependencies of, results retained in the final manuscript.
 
 ## What is included
 
