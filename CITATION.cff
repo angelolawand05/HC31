@@ -3,6 +3,9 @@ message: "If you use this software, please cite this repository and the associat
 type: software
 title: "HC31: MATLAB analysis code for hippocampal beta2 events during exploration of an expanding environment"
 
+version: "1.0.0"
+date-released: "2026-09-20"
+
 authors:
   - family-names: "Lawand"
     given-names: "Angelo"
@@ -11,6 +14,14 @@ repository-code: "https://github.com/angelolawand05/HC31"
 url: "https://github.com/angelolawand05/HC31"
 
 license: MIT
+
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22859836"
+    description: "Concept DOI for all versions of HC31."
+  - type: doi
+    value: "10.5281/zenodo.22859837"
+    description: "Version DOI for HC31 v1.0.0."
 
 abstract: >-
   Curated MATLAB analysis code and provenance documentation for a secondary
