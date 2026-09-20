@@ -1,4 +1,5 @@
 # HC31
+[![DOI](https://zenodo.org/badge/1378237257.svg)](https://doi.org/10.5281/zenodo.22859836)
 
 MATLAB analysis code, compact derived data, and provenance documentation for a secondary analysis of the CRCNS hc-31 dataset examining hippocampal beta2 events during exploration of an expanding environment.
 
@@ -212,9 +213,14 @@ This project is a secondary analysis of previously collected, publicly available
 
 ## Citation
 
-If using the original electrophysiological recordings, please cite the hc-31 dataset and the original source study according to CRCNS guidance.
+If using this analysis repository, please cite the software using the metadata provided in `CITATION.cff`.
 
-Citation metadata are provided in `CITATION.cff`.
+**HC31 software archive**
+
+- Concept DOI: https://doi.org/10.5281/zenodo.22859836
+- HC31 v1.0.0 DOI: https://doi.org/10.5281/zenodo.22859837
+
+If using the original electrophysiological recordings, please also cite the hc-31 dataset and the original source study according to CRCNS guidance.
 
 ## Contact
 
