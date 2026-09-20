@@ -40,6 +40,7 @@ Users should obtain the original data directly from CRCNS and comply with the da
 HC31/
 |-- README.md
 |-- CITATION.cff
+|-- LICENSE
 |-- .gitattributes
 |-- .gitignore
 |-- analysis/
@@ -64,8 +65,7 @@ HC31/
 |   |-- MANIFEST.csv
 |   |-- README_CURATED_SCRIPTS.md
 |   |-- EXCLUDED_SUMMARY.md
-|   |-- REPRODUCIBILITY.md
-|   `-- RELEASE_CHECKLIST.md
+|   `-- REPRODUCIBILITY.md
 `-- environment/
     `-- MATLAB_REQUIREMENTS.m
 ```
@@ -214,14 +214,12 @@ This project is a secondary analysis of previously collected, publicly available
 
 If using the original electrophysiological recordings, please cite the hc-31 dataset and the original source study according to CRCNS guidance.
 
-GitHub reads `CITATION.cff` to provide repository citation metadata. Version, release date, licence, and archival DOI should be finalized for the public v1.0.0 release.
+GitHub reads `CITATION.cff` to provide repository citation metadata.
 
-## Repository status
+## License
 
-**Pre-release repository.**
-
-The scientific manuscript is content-frozen. Code curation, derived-data packaging, reproducibility documentation, and dependency documentation are present. The remaining release tasks are final QA, licence selection, the public v1.0.0 release, and archival DOI creation.
+The analysis code in this repository is distributed under the MIT License. See `LICENSE`.
 
 ## Contact
 
-For questions about this analysis repository, please use the GitHub Issues page once the repository is public.
+For questions about this analysis repository, please use the GitHub Issues page.
