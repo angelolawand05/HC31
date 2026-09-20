@@ -1,0 +1,24 @@
+# MATLAB temporary files
+*.asv
+*.autosave
+*.m~
+slprj/
+codegen/
+*.mex*
+*.log
+*.tmp
+
+# Raw/external data should never be committed
+raw_data/
+data/raw/
+external_data/
+
+# Generated/intermediate analysis outputs
+scratch/
+temp/
+generated_outputs/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
